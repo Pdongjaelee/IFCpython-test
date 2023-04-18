@@ -4,9 +4,10 @@ import ifcopenshell
 file = ifcopenshell.open('C:/Users/USER\PycharmProjects\pythonProject/6_oil_IFC4_Reference_View.ifc')
 
 #
-products = file.by_type('IfcProduct')
-for product in products :
-    print(product.is_a())
+products = file.by_type('ROOF')
+print(file.by_guid('0pVAcfXILDMA$q2e0Z$q82'))
+#for product in products :
+#   print(product.is_a())
 
 
 
@@ -22,8 +23,8 @@ for product in products :
 
 # print(file.schema)
 
-# 2. IFC 스키마 살표
-# print(file.by_guid('2qbG3ptq9EmAuJZLXZIdDN'))
+# 2. IFC 스키마 guid
+
 
 
 
