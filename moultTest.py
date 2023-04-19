@@ -38,13 +38,13 @@ for property in property_set.HasProperties: # Phasing 값만 가져옴 ?
         print(property.NominalValue.wrappedValue)
 
 # 5. IFC 수량이 있는 데이터 값 [X]
-wall = file.by_type('IfcWall')[0]
-for definition in wall.IsDefinedBy:
-    related_data = definition.RelatingPropertyDefinition
-    if related_data.is_a('IfcPropertySet'):
-        pass
-    elif related_data.is_a('IfcElementQuantity'):
-        print_element_quantities(related_data)
+#wall = file.by_type('IfcWall')[0]
+#for definition in wall.IsDefinedBy:
+#    related_data = definition.RelatingPropertyDefinition
+#    if related_data.is_a('IfcPropertySet'):
+#        pass
+#    elif related_data.is_a('IfcElementQuantity'):
+#        print_element_quantities(related_data)
 
 
 # 6. IFC 많은 유형의 수량이 있는 데이터 값 [ ]
@@ -55,9 +55,9 @@ def print_element_quantities(element_quantity):
             print(quantity.lengthValue)
 
 # 7. IFC 요소의 배치 ~ 형상 데이터 값 [ ]
-if wall.ObjectPlacement.PlacementRelTo:
+if window.ObjectPlacement.PlacementRelTo:
     # Inherit the coordinates of its parents
     pass
-local_coordinates = wall.ObjectPlacement.RelativePlacement.Location[0]
+local_coordinates = window.ObjectPlacement.RelativePlacement.Location[0]
 
 # 8. IFC 요소 기하학적 표현 일단 패스~ [ ]
