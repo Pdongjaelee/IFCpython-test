@@ -6,7 +6,7 @@ from pprint import pprint
 if __name__ == '__main__':
     model = ifcopenshell.open('C:/Users/USER\PycharmProjects\pythonProject/6_car_IFC4_Reference_View.ifc')
 
-    walls = model.by_type('IfcWall') # IfcWall이 들어가는 엔티티 전부를 불러옴.... 왜..?
+    walls = model.by_type('IfcLocalPlacement') # IfcWall이 들어가는 엔티티 전부를 불러옴.... 왜..?
 
     wall = walls[0]
 
