@@ -29,8 +29,8 @@ def get_objects_data_by_class(file, class_type):
 
 import pprint
 pp = pprint.PrettyPrinter()
-data = get_objects_data_by_class(file, "IfcSite")
+data = get_objects_data_by_class(file, "IfcBuildingStorey")
 
 import json
-with open('./models/test.json', 'w') as f:
+with open('./models/IfcBuildingStorey.json', 'w') as f:
     json.dump(data, f)
