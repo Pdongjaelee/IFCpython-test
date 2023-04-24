@@ -3,6 +3,9 @@
 import ifcopenshell
 import ifcopenshell.util.element as Element
 import pprint
+import csv
+
+
 
 pp = pprint.PrettyPrinter()
 
@@ -74,13 +77,14 @@ for object_data in data:
     pandas_data.append(tuple(row))
 
 import pandas as pd
-
 dataframe = pd.DataFrame.from_records(pandas_data, columns=attributes)
 
 ## Export to CSV ?
 # dataframe.to_csv("./models/test.csv")
 
 # ## Export to Excel ?
+
+
 writer = pd.ExcelWriter('./models/test.xlsx', engine='xlsxwriter')
 for object_class in dataframe["Class"].unique():
     df_class = dataframe[dataframe["Class"] == object_class]
